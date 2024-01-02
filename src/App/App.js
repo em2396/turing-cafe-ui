@@ -1,9 +1,9 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { getReservations } from '../ApiCalls/apiCalls';
-import Reservations from '../Reservations/Reservations'
+import ReservationList from '../Reservations/Reservations'
 
-function App() {
+export default function App() {
   const [ reservations, setReservations ] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function App() {
         setReservations(data)
       })
   }, [])
-// console.log(reservations)
+console.log(reservations)
 
   return (
     <div className="App">
@@ -21,9 +21,8 @@ function App() {
       </div>
       <div className='resy-container'>
       </div>
-      <Reservations />
+      <ReservationList reservations={reservations}/>
     </div>
   );
 }
 
-export default App; 
