@@ -1,7 +1,19 @@
 import './App.css';
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { getReservations } from '../ApiCalls/apiCalls';
+import Reservations from '../Reservations/Reservations'
 
 function App() {
+  const [ reservations, setReservations ] = useState([]);
+
+  useEffect(() => {
+    getReservations()
+      .then(data => {
+        setReservations(data)
+      })
+  }, [])
+// console.log(reservations)
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
@@ -9,6 +21,7 @@ function App() {
       </div>
       <div className='resy-container'>
       </div>
+      <Reservations />
     </div>
   );
 }
