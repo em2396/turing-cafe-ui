@@ -11,6 +11,7 @@ export default function App() {
   useEffect(() => {
     getReservations()
       .then(data => {
+        console.log(data)
         setReservations(data)
       })
   }, [])
@@ -18,7 +19,6 @@ export default function App() {
   function addRes(newRes) {
     setReservations([...reservations, newRes])
   }
-  console.log(reservations)
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
