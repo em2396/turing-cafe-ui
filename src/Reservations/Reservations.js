@@ -2,7 +2,7 @@ import './Reservations.css'
 import SingleReservation from '../SingleReservation/SingleReservation'
 
 export default function Reservation({reservations}) {
-    console.log(reservations)
+    // console.log(reservations)
     const reservationCards = reservations.map(res => {
         return (
             <SingleReservation
@@ -18,7 +18,7 @@ export default function Reservation({reservations}) {
 
 
     return (
-        <div className='reservationCard'>
+        <div className='reservation-card'>
             {reservationCards}
         </div>
     )
